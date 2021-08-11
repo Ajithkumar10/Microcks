@@ -2,7 +2,7 @@
 	"info": {
 		"_postman_id": "6b53ab63-cc89-4ef5-bcb3-0ff5098193b9",
 		"name": "CABPT",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
 	"item": [
 		{
@@ -31,41 +31,15 @@
 									"request": {
 										"auth": {
 											"type": "basic",
-											"basic": [
-												{
-													"key": "username",
-													"value": "OCSL_APP_TESTING",
-													"type": "string"
-												},
-												{
-													"key": "password",
-													"value": "toBeEncryptedInConfigServer",
-													"type": "string"
-												},
-												{
-													"key": "showPassword",
-													"value": false,
-													"type": "boolean"
-												}
-											]
+											"basic": {
+												"username": "OCSL_APP_TESTING",
+												"password": "toBeEncryptedInConfigServer",
+												"showPassword": false
+											}
 										},
 										"method": "POST",
 										"header": [],
-										"url": {
-											"raw": "https://mesh-gateway-ocsl-dev.apps.ocpdubdta.dubdta.emirates.dev/authenticate",
-											"protocol": "https",
-											"host": [
-												"mesh-gateway-ocsl-dev",
-												"apps",
-												"ocpdubdta",
-												"dubdta",
-												"emirates",
-												"dev"
-											],
-											"path": [
-												"authenticate"
-											]
-										}
+										"url": "https://mesh-gateway-ocsl-dev.apps.ocpdubdta.dubdta.emirates.dev/authenticate"
 									},
 									"response": []
 								},
@@ -88,13 +62,9 @@
 									"request": {
 										"auth": {
 											"type": "bearer",
-											"bearer": [
-												{
-													"key": "token",
-													"value": "{{ocslAccessToken}}",
-													"type": "string"
-												}
-											]
+											"bearer": {
+												"token": "{{ocslAccessToken}}"
+											}
 										},
 										"method": "GET",
 										"header": [
@@ -147,23 +117,7 @@
 											"mode": "raw",
 											"raw": ""
 										},
-										"url": {
-											"raw": "https://mesh-gateway-ocsl-dev.apps.ocpdubdta.dubdta.emirates.dev/rebooking/shopping/Reshop-53771e8e-2ff2-4579-babe-7d7f6f15d4f4",
-											"protocol": "https",
-											"host": [
-												"mesh-gateway-ocsl-dev",
-												"apps",
-												"ocpdubdta",
-												"dubdta",
-												"emirates",
-												"dev"
-											],
-											"path": [
-												"rebooking",
-												"shopping",
-												"Reshop-53771e8e-2ff2-4579-babe-7d7f6f15d4f4"
-											]
-										}
+										"url": "https://mesh-gateway-ocsl-dev.apps.ocpdubdta.dubdta.emirates.dev/rebooking/shopping/Reshop-53771e8e-2ff2-4579-babe-7d7f6f15d4f4"
 									},
 									"response": [
 										{
@@ -216,23 +170,7 @@
 														"value": "header2"
 													}
 												],
-												"url": {
-													"raw": "https://mesh-gateway-ocsl-dev.apps.ocpdubdta.dubdta.emirates.dev/rebooking/shopping/Reshop-53771e8e-2ff2-4579-babe-7d7f6f15d4f4",
-													"protocol": "https",
-													"host": [
-														"mesh-gateway-ocsl-dev",
-														"apps",
-														"ocpdubdta",
-														"dubdta",
-														"emirates",
-														"dev"
-													],
-													"path": [
-														"rebooking",
-														"shopping",
-														"Reshop-53771e8e-2ff2-4579-babe-7d7f6f15d4f4"
-													]
-												}
+												"url": "https://mesh-gateway-ocsl-dev.apps.ocpdubdta.dubdta.emirates.dev/rebooking/shopping/Reshop-53771e8e-2ff2-4579-babe-7d7f6f15d4f4"
 											},
 											"status": "OK",
 											"code": 200,
@@ -305,13 +243,9 @@
 									"request": {
 										"auth": {
 											"type": "bearer",
-											"bearer": [
-												{
-													"key": "token",
-													"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJyb2xlcyI6WyJDVVNUT01FUl9TVEFOREFSRCIsIkJPT0tJTkdfU1RBTkRBUkQiLCJQQVlNRU5UX1NUQU5EQVJEIiwiRVhURVJOQUxfQk9PS0lOR19TVEFOREFSRCIsIkxPWUFMVFlfQUNDT1VOVF9NQU5BR0VNRU5UX1NUQU5EQVJEIiwiUFJPRFVDVF9DT05URVhUX1NUQU5EQVJEIiwiTE9ZQUxUWV9TVEFOREFSRCIsIlVUSUxJVFlTRVJWSUNFU19TVEFOREFSRCIsIkxPQ0FUSU9OX0NPTlRFWFRfU1RBTkRBUkQiLCJQUklDSU5HX1NUQU5EQVJEIiwiU0VBUkNIX1NUQU5EQVJEIiwiUEFZTUVOVF9DT05URVhUX1NUQU5EQVJEIiwiQkFHR0FHRV9TVEFOREFSRCIsIlJFU0VSVkFUSU9OX1NUQU5EQVJEIiwiTE9ZQUxUWV9DT05URVhUX1NUQU5EQVJEIiwiUkVCT09LSU5HX1NUQU5EQVJEIiwiRkxJR0hUX1NUQU5EQVJEIiwiRVhQT19TVEFOREFSRCIsIlBSSUNJTkdfUkVCT09LSU5HX1NUQU5EQVJEIl0sImlzcyI6Ik9DU0wiLCJjaGFubmVsIjoiT0NTTF9BUFBfVEVTVElORyIsImV4cCI6MTYyODY4NDgxOSwiaWF0IjoxNjI4NjcwNDE5LCJqdGkiOiJPQ1NMX0FQUF9URVNUSU5HIn0.XdKED02MRbAGAOrN2EIvmRnSKDp5zdN4Dx-DrG_3afJyrvDe6QqB9tTYcRWpkdMCcOIJU6EfO4U2WBgWQlruEfplWAa7xjewIkYFrs6GjchWKbFS3BMb4_CDX9CnNMI0h9yanWM00iA4XZXD7cEAS-C4t1T0qAtfUDyutQpvtAKznVGgLKnmqxL29ZwGT_fE4rFJYK5N7_67nSiM5TL6twNoEYDAKDR48rnsuBOyqkkxPc1D-OPsBlyjUzdheIq29cimu8xYRvFAy73JSmdc4aXAz26kKsQuVHuKX73vUroYEm55sV8vCBiBlD7SpL8ATXvF-SqFpWj6wW6v0fjI0w",
-													"type": "string"
-												}
-											]
+											"bearer": {
+												"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJyb2xlcyI6WyJDVVNUT01FUl9TVEFOREFSRCIsIkJPT0tJTkdfU1RBTkRBUkQiLCJQQVlNRU5UX1NUQU5EQVJEIiwiRVhURVJOQUxfQk9PS0lOR19TVEFOREFSRCIsIkxPWUFMVFlfQUNDT1VOVF9NQU5BR0VNRU5UX1NUQU5EQVJEIiwiUFJPRFVDVF9DT05URVhUX1NUQU5EQVJEIiwiTE9ZQUxUWV9TVEFOREFSRCIsIlVUSUxJVFlTRVJWSUNFU19TVEFOREFSRCIsIkxPQ0FUSU9OX0NPTlRFWFRfU1RBTkRBUkQiLCJQUklDSU5HX1NUQU5EQVJEIiwiU0VBUkNIX1NUQU5EQVJEIiwiUEFZTUVOVF9DT05URVhUX1NUQU5EQVJEIiwiQkFHR0FHRV9TVEFOREFSRCIsIlJFU0VSVkFUSU9OX1NUQU5EQVJEIiwiTE9ZQUxUWV9DT05URVhUX1NUQU5EQVJEIiwiUkVCT09LSU5HX1NUQU5EQVJEIiwiRkxJR0hUX1NUQU5EQVJEIiwiRVhQT19TVEFOREFSRCIsIlBSSUNJTkdfUkVCT09LSU5HX1NUQU5EQVJEIl0sImlzcyI6Ik9DU0wiLCJjaGFubmVsIjoiT0NTTF9BUFBfVEVTVElORyIsImV4cCI6MTYyODY4NDgxOSwiaWF0IjoxNjI4NjcwNDE5LCJqdGkiOiJPQ1NMX0FQUF9URVNUSU5HIn0.XdKED02MRbAGAOrN2EIvmRnSKDp5zdN4Dx-DrG_3afJyrvDe6QqB9tTYcRWpkdMCcOIJU6EfO4U2WBgWQlruEfplWAa7xjewIkYFrs6GjchWKbFS3BMb4_CDX9CnNMI0h9yanWM00iA4XZXD7cEAS-C4t1T0qAtfUDyutQpvtAKznVGgLKnmqxL29ZwGT_fE4rFJYK5N7_67nSiM5TL6twNoEYDAKDR48rnsuBOyqkkxPc1D-OPsBlyjUzdheIq29cimu8xYRvFAy73JSmdc4aXAz26kKsQuVHuKX73vUroYEm55sV8vCBiBlD7SpL8ATXvF-SqFpWj6wW6v0fjI0w"
+											}
 										},
 										"method": "POST",
 										"header": [
@@ -350,22 +284,7 @@
 											"mode": "raw",
 											"raw": "{\n\"passengerLastName\" : \"TEST\",\n\"bookingReference\" : \"G6B7NB\"\n}"
 										},
-										"url": {
-											"raw": "https://mesh-gateway-ocsl-dev.apps.ocpdubdta.dubdta.emirates.dev/rebooking/shopping",
-											"protocol": "https",
-											"host": [
-												"mesh-gateway-ocsl-dev",
-												"apps",
-												"ocpdubdta",
-												"dubdta",
-												"emirates",
-												"dev"
-											],
-											"path": [
-												"rebooking",
-												"shopping"
-											]
-										}
+										"url": "https://mesh-gateway-ocsl-dev.apps.ocpdubdta.dubdta.emirates.dev/rebooking/shopping"
 									},
 									"response": [
 										{
@@ -408,22 +327,7 @@
 													"mode": "raw",
 													"raw": "{\n\"passengerLastName\" : \"TEST\",\n\"bookingReference\" : \"G6B7NB\"\n}"
 												},
-												"url": {
-													"raw": "https://mesh-gateway-ocsl-dev.apps.ocpdubdta.dubdta.emirates.dev/rebooking/shopping",
-													"protocol": "https",
-													"host": [
-														"mesh-gateway-ocsl-dev",
-														"apps",
-														"ocpdubdta",
-														"dubdta",
-														"emirates",
-														"dev"
-													],
-													"path": [
-														"rebooking",
-														"shopping"
-													]
-												}
+												"url": "https://mesh-gateway-ocsl-dev.apps.ocpdubdta.dubdta.emirates.dev/rebooking/shopping"
 											},
 											"status": "Created",
 											"code": 201,
@@ -515,13 +419,9 @@
 									"request": {
 										"auth": {
 											"type": "bearer",
-											"bearer": [
-												{
-													"key": "token",
-													"value": "{{ocslAccessToken}}",
-													"type": "string"
-												}
-											]
+											"bearer": {
+												"token": "{{ocslAccessToken}}"
+											}
 										},
 										"method": "GET",
 										"header": [
@@ -550,24 +450,7 @@
 											"mode": "raw",
 											"raw": ""
 										},
-										"url": {
-											"raw": "https://mesh-gateway-ocsl-dev.apps.ocpdubdta.dubdta.emirates.dev/pricing/rebooking/v1/Reshop-Pricing-2c0b03df-1e6f-418d-bcf5-2c2b493519c",
-											"protocol": "https",
-											"host": [
-												"mesh-gateway-ocsl-dev",
-												"apps",
-												"ocpdubdta",
-												"dubdta",
-												"emirates",
-												"dev"
-											],
-											"path": [
-												"pricing",
-												"rebooking",
-												"v1",
-												"Reshop-Pricing-2c0b03df-1e6f-418d-bcf5-2c2b493519c"
-											]
-										}
+										"url": "https://mesh-gateway-ocsl-dev.apps.ocpdubdta.dubdta.emirates.dev/pricing/rebooking/v1/Reshop-Pricing-2c0b03df-1e6f-418d-bcf5-2c2b493519c"
 									},
 									"response": []
 								},
@@ -576,13 +459,9 @@
 									"request": {
 										"auth": {
 											"type": "bearer",
-											"bearer": [
-												{
-													"key": "token",
-													"value": "{{ocslAccessToken}}",
-													"type": "string"
-												}
-											]
+											"bearer": {
+												"token": "{{ocslAccessToken}}"
+											}
 										},
 										"method": "POST",
 										"header": [
@@ -611,23 +490,7 @@
 											"mode": "raw",
 											"raw": "{\n  \"reshopId\": \"Reshop-2648be6e-4759-4907-8342-2b255016a334\",\n  \"originDestinations\": [\n    {\n      \"id\": \"1\",\n      \"preferences\": [\n        {\n          \"type\": \"date\",\n          \"value\": \"2022-06-05\"\n        }\n      ]\n    },\n    {\n      \"id\": \"2\",\n      \"preferences\": [\n        {\n          \"type\": \"date\",\n          \"value\": \"2021-08-30\"\n        }\n      ]\n    }\n\n  ],\n  \"sortBy\" : \"price\"\n}"
 										},
-										"url": {
-											"raw": "https://mesh-gateway-ocsl-dev.apps.ocpdubdta.dubdta.emirates.dev/pricing/rebooking/v1",
-											"protocol": "https",
-											"host": [
-												"mesh-gateway-ocsl-dev",
-												"apps",
-												"ocpdubdta",
-												"dubdta",
-												"emirates",
-												"dev"
-											],
-											"path": [
-												"pricing",
-												"rebooking",
-												"v1"
-											]
-										}
+										"url": "https://mesh-gateway-ocsl-dev.apps.ocpdubdta.dubdta.emirates.dev/pricing/rebooking/v1"
 									},
 									"response": []
 								}
