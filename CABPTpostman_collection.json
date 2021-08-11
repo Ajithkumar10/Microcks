@@ -2,6 +2,7 @@
 	"info": {
 		"_postman_id": "6b53ab63-cc89-4ef5-bcb3-0ff5098193b9",
 		"name": "CABPT",
+		"description": "version=1.0 - This is a rebooking API description",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
 	"item": [
