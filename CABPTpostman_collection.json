@@ -1,0 +1,643 @@
+{
+	"info": {
+		"_postman_id": "6b53ab63-cc89-4ef5-bcb3-0ff5098193b9",
+		"name": "CABPT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CAB",
+			"item": [
+				{
+					"name": "MeshGateway",
+					"item": [
+						{
+							"name": "Dev",
+							"item": [
+								{
+									"name": "Authenticate",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"var jsonData = pm.response.json();\r",
+													"pm.environment.set(\"ocslAccessToken\", jsonData.token);"
+												]
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "basic",
+											"basic": [
+												{
+													"key": "username",
+													"value": "OCSL_APP_TESTING",
+													"type": "string"
+												},
+												{
+													"key": "password",
+													"value": "toBeEncryptedInConfigServer",
+													"type": "string"
+												},
+												{
+													"key": "showPassword",
+													"value": false,
+													"type": "boolean"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "https://mesh-gateway-ocsl-dev.apps.ocpdubdta.dubdta.emirates.dev/authenticate",
+											"protocol": "https",
+											"host": [
+												"mesh-gateway-ocsl-dev",
+												"apps",
+												"ocpdubdta",
+												"dubdta",
+												"emirates",
+												"dev"
+											],
+											"path": [
+												"authenticate"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "2)Get-BookingContextEligibility",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{ocslAccessToken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Cache-Control",
+												"value": "no-cache"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "EK-Accept-Version",
+												"value": "v1"
+											},
+											{
+												"key": "EK-Channel-Name",
+												"value": "web"
+											},
+											{
+												"key": "EK-Correlation-Id",
+												"value": "12345"
+											},
+											{
+												"key": "EK-Request-Id",
+												"type": "text",
+												"value": "req"
+											},
+											{
+												"key": "EK-Forward-DC",
+												"type": "text",
+												"value": "ie1"
+											},
+											{
+												"key": "specific_header_Id_1",
+												"type": "text",
+												"value": "header1"
+											},
+											{
+												"key": "specific_header_Id_2",
+												"type": "text",
+												"value": "header2"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": ""
+										},
+										"url": {
+											"raw": "https://mesh-gateway-ocsl-dev.apps.ocpdubdta.dubdta.emirates.dev/rebooking/shopping/Reshop-53771e8e-2ff2-4579-babe-7d7f6f15d4f4",
+											"protocol": "https",
+											"host": [
+												"mesh-gateway-ocsl-dev",
+												"apps",
+												"ocpdubdta",
+												"dubdta",
+												"emirates",
+												"dev"
+											],
+											"path": [
+												"rebooking",
+												"shopping",
+												"Reshop-53771e8e-2ff2-4579-babe-7d7f6f15d4f4"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "2)Get-BookingContextEligibility",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													},
+													{
+														"key": "Cache-Control",
+														"value": "no-cache"
+													},
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "EK-Accept-Version",
+														"value": "v1"
+													},
+													{
+														"key": "EK-Channel-Name",
+														"value": "web"
+													},
+													{
+														"key": "EK-Correlation-Id",
+														"value": "12345"
+													},
+													{
+														"key": "EK-Request-Id",
+														"type": "text",
+														"value": "req"
+													},
+													{
+														"key": "EK-Forward-DC",
+														"type": "text",
+														"value": "ie1"
+													},
+													{
+														"key": "specific_header_Id_1",
+														"type": "text",
+														"value": "header1"
+													},
+													{
+														"key": "specific_header_Id_2",
+														"type": "text",
+														"value": "header2"
+													}
+												],
+												"url": {
+													"raw": "https://mesh-gateway-ocsl-dev.apps.ocpdubdta.dubdta.emirates.dev/rebooking/shopping/Reshop-53771e8e-2ff2-4579-babe-7d7f6f15d4f4",
+													"protocol": "https",
+													"host": [
+														"mesh-gateway-ocsl-dev",
+														"apps",
+														"ocpdubdta",
+														"dubdta",
+														"emirates",
+														"dev"
+													],
+													"path": [
+														"rebooking",
+														"shopping",
+														"Reshop-53771e8e-2ff2-4579-babe-7d7f6f15d4f4"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Vary",
+													"value": "Origin"
+												},
+												{
+													"key": "Vary",
+													"value": "Access-Control-Request-Method"
+												},
+												{
+													"key": "Vary",
+													"value": "Access-Control-Request-Headers"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache, no-store, max-age=0, must-revalidate"
+												},
+												{
+													"key": "Pragma",
+													"value": "no-cache"
+												},
+												{
+													"key": "Expires",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "Strict-Transport-Security",
+													"value": "max-age=31536000 ; includeSubDomains"
+												},
+												{
+													"key": "X-Frame-Options",
+													"value": "DENY"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "1 ; mode=block"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "no-referrer"
+												},
+												{
+													"key": "content-encoding",
+													"value": "gzip"
+												},
+												{
+													"key": "transfer-encoding",
+													"value": "chunked"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"id\": \"Reshop-53771e8e-2ff2-4579-babe-7d7f6f15d4f4\",\n    \"context\": {\n        \"originDestinations\": [\n            {\n                \"id\": \"1\",\n                \"departure\": \"DXB\",\n                \"arrival\": \"BLR\",\n                \"airSegments\": [\n                    {\n                        \"id\": \"airsegment01\",\n                        \"carrierCode\": \"EK\",\n                        \"flightNumber\": \"0564\",\n                        \"sequenceNumber\": 1,\n                        \"departure\": \"DXB\",\n                        \"arrival\": \"BLR\",\n                        \"departureDateTime\": \"2021-08-20T03:20:00\",\n                        \"arrivalDateTime\": \"2021-08-20T08:55:00\",\n                        \"cabinClass\": \"Y\",\n                        \"reservationClass\": \"Y\",\n                        \"aircraftType\": \"BOEING 777-300ER\",\n                        \"operatingCarrierCode\": \"EK\",\n                        \"duration\": \"PT4H5M\",\n                        \"ond\": \"DXBBLR\",\n                        \"departureDayOftheWeek\": \"FRI\",\n                        \"arrivalDayOftheWeek\": \"FRI\",\n                        \"minutesToDepart\": 0,\n                        \"dayChangeCount\": 0,\n                        \"newSegmentNumber\": 0\n                    }\n                ],\n                \"changeBookingAllowed\": true,\n                \"duration\": \"PT4H5M\"\n            }\n        ]\n    },\n    \"flxReshopRequest\": {\n        \"repricerRequest\": {\n            \"transactionInfo\": {\n                \"id\": \"7610494c-b7d8-4a14-a1ff-6ddd0f3ad1bf\",\n                \"action\": \"Prevalidation\",\n                \"shoppingType\": \"NonBranded\"\n            },\n            \"tc\": {\n                \"iden\": {\n                    \"u\": \"Skyscanner\",\n                    \"p\": \"ctpkntnKUgRfJVu\",\n                    \"pseudocity\": \"AKEF\",\n                    \"agt\": \"ek_xmluser01\",\n                    \"agtpwd\": \"Emirates01\",\n                    \"agtrole\": \"Ticketing Agent\"\n                },\n                \"agent\": {\n                    \"user\": \"ek_xmluser01\"\n                },\n                \"trace\": \"FLXMTEST\",\n                \"script\": {\n                    \"engine\": \"FLXDM\",\n                    \"name\": \"skyscanner-ekd-dispatch.flxdm\"\n                }\n            },\n            \"salesInfo\": {\n                \"channelName\": \"MOB\"\n            },\n            \"bookingInfo\": {\n                \"recordLocator\": \"G6B7NB\",\n                \"pnrLastUpdatedDateTime\": \"2021-08-04T09:23:38\",\n                \"creator\": {\n                    \"pnrCreationDateTime\": \"2021-06-28T00:00:00\",\n                    \"isGroupBooking\": false\n                },\n                \"pointOfSale\": {\n                    \"posType\": \"HST\",\n                    \"carrierCode\": \"EK\",\n                    \"pseudoCityCode\": \"VQQ\",\n                    \"agencyNumber\": \"99999992\",\n                    \"geoCity\": \"DXB\",\n                    \"geoCountry\": \"AE\",\n                    \"agentDutyCode\": \"SU\"\n                },\n                \"itineraries\": {\n                    \"airSegments\": [\n                        {\n                            \"sequenceNumber\": \"1\",\n                            \"elapsedFlightTime\": \"04 HRS 05MIN\",\n                            \"equipment\": \"BOEING 777-300ER\",\n                            \"segmentType\": {\n                                \"itineraryType\": \"FLT\",\n                                \"segmentType\": \"FLT\"\n                            },\n                            \"operationalMarketingSegment\": 0,\n                            \"hostCarrier\": \"EK\",\n                            \"flightNumber\": 564,\n                            \"serviceClass\": \"Y\",\n                            \"reservationClass\": \"Y\",\n                            \"departureDateTime\": \"2021-08-20T03:20:00\",\n                            \"departureDayOftheWeek\": \"FRI\",\n                            \"departureCity\": \"DXB\",\n                            \"departureTerminalName\": \"3\",\n                            \"arrivalCityCode\": \"BLR\",\n                            \"bookingStatus\": \"HK\",\n                            \"numberInParty\": \"1\",\n                            \"arrivalDateTime\": \"2021-08-20T08:55:00\",\n                            \"arrivalDayOftheWeek\": \"FRI\",\n                            \"dayChangeCount\": \"0\",\n                            \"isDateChangeFlight\": false,\n                            \"isPassiveSegment\": false,\n                            \"isElectronicTicketed\": true,\n                            \"isCodeShareSegment\": false,\n                            \"isMarriedSegment\": false,\n                            \"isScheduleChanged\": false,\n                            \"codeShareFlightNumber\": 0,\n                            \"isInfoSegment\": false,\n                            \"isFqtvSpecificFlag\": false,\n                            \"stopovers\": \"0\",\n                            \"isSegmentFlown\": false,\n                            \"additionalInfo\": []\n                        }\n                    ],\n                    \"arrivalUnknownSegments\": [],\n                    \"airTaxiSegments\": [],\n                    \"tourSegments\": [],\n                    \"hotelSegments\": [],\n                    \"carSegments\": [],\n                    \"surfaceSegments\": [],\n                    \"servicesSegments\": [],\n                    \"jtopSegments\": []\n                },\n                \"passengers\": [\n                    {\n                        \"paxId\": 1,\n                        \"paxType\": \"ADT\",\n                        \"ticketInfo\": {\n                            \"primaryTicketNumber\": \"1760100031137\",\n                            \"conjunctionTicketNumber\": \"1760100031137\",\n                            \"airlineConfirmationNumber\": \"JSJZLS\",\n                            \"ticketIssueDetails\": {\n                                \"issuingText\": \"E M I R A T E S ISSUED\",\n                                \"issuingDateTime\": \"2021-06-28T09:33:16\",\n                                \"issuingAirlineCode\": \"EK\",\n                                \"issuingCityCode\": \"DXB\",\n                                \"issuingAgentCode\": \"X8\",\n                                \"iataCode\": \"99999911\",\n                                \"issuingCountryCode\": \"AE\",\n                                \"boardingCountryCode\": \"AE\",\n                                \"issuingAgentName\": \"DUBAI EGTC / MERCATOR ET LAB\"\n                            },\n                            \"formOfIdType\": [],\n                            \"couponDetails\": [\n                                {\n                                    \"couponNumber\": 1,\n                                    \"couponEticketNumber\": \"1760100031137\",\n                                    \"emdIndicator\": \"false\",\n                                    \"origin\": \"DXB\",\n                                    \"destination\": \"BLR\",\n                                    \"isStopOver\": false,\n                                    \"carrierCode\": \"EK\",\n                                    \"flightNumber\": \"564\",\n                                    \"rbdCode\": \"Y\",\n                                    \"flightDateTime\": \"2021-08-20T03:20:00\",\n                                    \"couponStatus\": \"OPEN FOR USE\",\n                                    \"fareBaseCode\": \"YLOWFAE1\",\n                                    \"couponValidity\": {\n                                        \"status\": \"OK\",\n                                        \"sequenceNumber\": 0\n                                    },\n                                    \"baggageAllowance\": {\n                                        \"baggageWeight\": \"35\",\n                                        \"unitForWeight\": \"K\"\n                                    },\n                                    \"upgradeAuthorization\": [],\n                                    \"additionalInfo\": []\n                                }\n                            ],\n                            \"endorsements\": \"NON-END/FLEX PLUS\",\n                            \"fareCalculationData\": \"DXB EK BLR803.21YLOWFAE1 NUC803.21  END ROE3.6727\",\n                            \"fciIndicator\": \"0\",\n                            \"fareDetails\": {\n                                \"baseFare\": {\n                                    \"currencyCode\": \"AED\",\n                                    \"fareValue\": 2950\n                                },\n                                \"taxDetails\": [\n                                    {\n                                        \"taxCode\": \"AE\",\n                                        \"taxValue\": \"75\",\n                                        \"currencyCode\": \"AED\",\n                                        \"isPaidTax\": false\n                                    },\n                                    {\n                                        \"taxCode\": \"YQ\",\n                                        \"taxValue\": \"60\",\n                                        \"currencyCode\": \"AED\",\n                                        \"isPaidTax\": false\n                                    },\n                                    {\n                                        \"taxCode\": \"YR\",\n                                        \"taxValue\": \"10\",\n                                        \"currencyCode\": \"AED\",\n                                        \"isPaidTax\": false\n                                    },\n                                    {\n                                        \"taxCode\": \"TP\",\n                                        \"taxValue\": \"5\",\n                                        \"currencyCode\": \"AED\",\n                                        \"isPaidTax\": false\n                                    },\n                                    {\n                                        \"taxCode\": \"ZR\",\n                                        \"taxValue\": \"5\",\n                                        \"currencyCode\": \"AED\",\n                                        \"isPaidTax\": false\n                                    },\n                                    {\n                                        \"taxCode\": \"F6\",\n                                        \"taxValue\": \"6\",\n                                        \"currencyCode\": \"AED\",\n                                        \"isPaidTax\": false\n                                    },\n                                    {\n                                        \"taxCode\": \"6A\",\n                                        \"taxValue\": \"1006\",\n                                        \"currencyCode\": \"AED\",\n                                        \"isPaidTax\": false\n                                    }\n                                ],\n                                \"totalFare\": {\n                                    \"currencyCode\": \"AED\",\n                                    \"fareValue\": 3240\n                                },\n                                \"modeOfPayment\": [\n                                    \"CASH\"\n                                ]\n                            },\n                            \"freeText\": [\n                                {\n                                    \"sequenceNumber\": 1,\n                                    \"remarkDateTime\": \"2021-06-28T05:33:00\",\n                                    \"cityCode\": \"SYS\",\n                                    \"carrierCode\": \"EK\",\n                                    \"remarkText\": \"*ROGW006 DUE COVID-19_DOCUMENT VALID UNTIL 28JUL23/NP01OCT2020\"\n                                },\n                                {\n                                    \"sequenceNumber\": 2,\n                                    \"remarkDateTime\": \"2021-06-28T05:33:00\",\n                                    \"cityCode\": \"SYS\",\n                                    \"carrierCode\": \"EK\",\n                                    \"remarkText\": \"PNR CREATOR/*/EK/G6B7NB/VQQ/99999992/DXB/AE/*/*/SU/*/*/*/TICKET CREATOR EKVQQX8/99999911 LEID-022A96\"\n                                }\n                            ],\n                            \"suspendedCouponIndicator\": false,\n                            \"commissionTicketIndicator\": false,\n                            \"CUGOTicketIndicator\": false,\n                            \"staffTicketIndicator\": false,\n                            \"reissuedTicketIndicator\": false,\n                            \"groupTicketIndicator\": false,\n                            \"rewardTicketIndicator\": false,\n                            \"isClassicRewardsTicket\": false,\n                            \"isFixedMilesUpgradeTicket\": false,\n                            \"isAnySeatRewardTicket\": false,\n                            \"isCashPlusMilesTicket\": false,\n                            \"rewardDetails\": [],\n                            \"reIssuanceDetails\": {\n                                \"ticketType\": \"0\",\n                                \"originalDateTimeOfTktIssuance\": \"28JUN2021\"\n                            },\n                            \"additionalInfo\": []\n                        }\n                    }\n                ],\n                \"facts\": {\n                    \"specialServiceRequests\": [\n                        {\n                            \"sequenceNumber\": \"1\",\n                            \"serviceType\": \"SSR\",\n                            \"serviceCode\": \"CTCE\",\n                            \"isFlightRelated\": false,\n                            \"isNameRelated\": true,\n                            \"bookingStatus\": \"HK\",\n                            \"numberInParty\": \"001\",\n                            \"variableData\": \"DFSDFG@G.CON\"\n                        },\n                        {\n                            \"sequenceNumber\": \"2\",\n                            \"serviceType\": \"SSR\",\n                            \"serviceCode\": \"TKNE\",\n                            \"hostCarrierCode\": \"EK\",\n                            \"isFlightRelated\": true,\n                            \"isNameRelated\": true,\n                            \"flightInfo\": {\n                                \"flightNumber\": 564,\n                                \"departureDate\": \"2021-08-20\",\n                                \"reservationClass\": \"Y\",\n                                \"origin\": \"DXB\",\n                                \"destination\": \"BLR\"\n                            },\n                            \"bookingStatus\": \"HK\",\n                            \"numberInParty\": \"001\",\n                            \"variableData\": \"1760100031137C1\"\n                        }\n                    ],\n                    \"otherRequests\": [],\n                    \"otherServiceInfo\": [\n                        {\n                            \"sequenceNumber\": \"1\",\n                            \"hostCarrier\": \"EK\",\n                            \"variableData\": \"CTC E DFSDFG//G.CON\"\n                        }\n                    ]\n                },\n                \"pnrClaims\": [],\n                \"recordLocators\": [\n                    {\n                        \"sequenceNumber\": 1,\n                        \"carrierCode\": \"EK\",\n                        \"cityCode\": \"DXB\"\n                    }\n                ],\n                \"ACommunications\": [],\n                \"FCommunications\": [],\n                \"SCommunications\": [],\n                \"additionalInfo\": []\n            },\n            \"isPrevalidationRequired\": true,\n            \"applyServiceFee\": true\n        }\n    }\n}"
+										}
+									]
+								},
+								{
+									"name": "1)Create-BookingContextEligibility",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJyb2xlcyI6WyJDVVNUT01FUl9TVEFOREFSRCIsIkJPT0tJTkdfU1RBTkRBUkQiLCJQQVlNRU5UX1NUQU5EQVJEIiwiRVhURVJOQUxfQk9PS0lOR19TVEFOREFSRCIsIkxPWUFMVFlfQUNDT1VOVF9NQU5BR0VNRU5UX1NUQU5EQVJEIiwiUFJPRFVDVF9DT05URVhUX1NUQU5EQVJEIiwiTE9ZQUxUWV9TVEFOREFSRCIsIlVUSUxJVFlTRVJWSUNFU19TVEFOREFSRCIsIkxPQ0FUSU9OX0NPTlRFWFRfU1RBTkRBUkQiLCJQUklDSU5HX1NUQU5EQVJEIiwiU0VBUkNIX1NUQU5EQVJEIiwiUEFZTUVOVF9DT05URVhUX1NUQU5EQVJEIiwiQkFHR0FHRV9TVEFOREFSRCIsIlJFU0VSVkFUSU9OX1NUQU5EQVJEIiwiTE9ZQUxUWV9DT05URVhUX1NUQU5EQVJEIiwiUkVCT09LSU5HX1NUQU5EQVJEIiwiRkxJR0hUX1NUQU5EQVJEIiwiRVhQT19TVEFOREFSRCIsIlBSSUNJTkdfUkVCT09LSU5HX1NUQU5EQVJEIl0sImlzcyI6Ik9DU0wiLCJjaGFubmVsIjoiT0NTTF9BUFBfVEVTVElORyIsImV4cCI6MTYyODY4NDgxOSwiaWF0IjoxNjI4NjcwNDE5LCJqdGkiOiJPQ1NMX0FQUF9URVNUSU5HIn0.XdKED02MRbAGAOrN2EIvmRnSKDp5zdN4Dx-DrG_3afJyrvDe6QqB9tTYcRWpkdMCcOIJU6EfO4U2WBgWQlruEfplWAa7xjewIkYFrs6GjchWKbFS3BMb4_CDX9CnNMI0h9yanWM00iA4XZXD7cEAS-C4t1T0qAtfUDyutQpvtAKznVGgLKnmqxL29ZwGT_fE4rFJYK5N7_67nSiM5TL6twNoEYDAKDR48rnsuBOyqkkxPc1D-OPsBlyjUzdheIq29cimu8xYRvFAy73JSmdc4aXAz26kKsQuVHuKX73vUroYEm55sV8vCBiBlD7SpL8ATXvF-SqFpWj6wW6v0fjI0w",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "EK-Accept-Version",
+												"value": "v1",
+												"type": "text"
+											},
+											{
+												"key": "EK-Channel-Name",
+												"value": "MOB",
+												"type": "text"
+											},
+											{
+												"key": "EK-Correlation-Id",
+												"value": "correlation_G6B7NB",
+												"type": "text"
+											},
+											{
+												"key": "EK-Request-Id",
+												"value": "request-0",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\"passengerLastName\" : \"TEST\",\n\"bookingReference\" : \"G6B7NB\"\n}"
+										},
+										"url": {
+											"raw": "https://mesh-gateway-ocsl-dev.apps.ocpdubdta.dubdta.emirates.dev/rebooking/shopping",
+											"protocol": "https",
+											"host": [
+												"mesh-gateway-ocsl-dev",
+												"apps",
+												"ocpdubdta",
+												"dubdta",
+												"emirates",
+												"dev"
+											],
+											"path": [
+												"rebooking",
+												"shopping"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "1)Create-BookingContextEligibility",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "EK-Accept-Version",
+														"value": "v1",
+														"type": "text"
+													},
+													{
+														"key": "EK-Channel-Name",
+														"value": "MOB",
+														"type": "text"
+													},
+													{
+														"key": "EK-Correlation-Id",
+														"value": "correlation_G6B7NB",
+														"type": "text"
+													},
+													{
+														"key": "EK-Request-Id",
+														"value": "request-0",
+														"type": "text"
+													},
+													{
+														"key": "Content-Type",
+														"value": "application/json",
+														"type": "text"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n\"passengerLastName\" : \"TEST\",\n\"bookingReference\" : \"G6B7NB\"\n}"
+												},
+												"url": {
+													"raw": "https://mesh-gateway-ocsl-dev.apps.ocpdubdta.dubdta.emirates.dev/rebooking/shopping",
+													"protocol": "https",
+													"host": [
+														"mesh-gateway-ocsl-dev",
+														"apps",
+														"ocpdubdta",
+														"dubdta",
+														"emirates",
+														"dev"
+													],
+													"path": [
+														"rebooking",
+														"shopping"
+													]
+												}
+											},
+											"status": "Created",
+											"code": 201,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Vary",
+													"value": "Origin"
+												},
+												{
+													"key": "Vary",
+													"value": "Access-Control-Request-Method"
+												},
+												{
+													"key": "Vary",
+													"value": "Access-Control-Request-Headers"
+												},
+												{
+													"key": "Vary",
+													"value": "Origin"
+												},
+												{
+													"key": "Vary",
+													"value": "Access-Control-Request-Method"
+												},
+												{
+													"key": "Vary",
+													"value": "Access-Control-Request-Headers"
+												},
+												{
+													"key": "Location",
+													"value": "/Reshop-fd2325e6-8a52-496f-94e0-da7eaa18cac6"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "Content-Length",
+													"value": "52"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache, no-store, max-age=0, must-revalidate"
+												},
+												{
+													"key": "Pragma",
+													"value": "no-cache"
+												},
+												{
+													"key": "Expires",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "Strict-Transport-Security",
+													"value": "max-age=31536000 ; includeSubDomains"
+												},
+												{
+													"key": "X-Frame-Options",
+													"value": "DENY"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "1 ; mode=block"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "no-referrer"
+												},
+												{
+													"key": "connection",
+													"value": "close"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"id\": \"Reshop-fd2325e6-8a52-496f-94e0-da7eaa18cac6\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Get - Reshop-Service",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{ocslAccessToken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/stream+json"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/stream+json"
+											},
+											{
+												"key": "EK-Correlation-Id",
+												"value": "Reshop_Pricing"
+											},
+											{
+												"key": "EK-Request-Id",
+												"value": "req"
+											},
+											{
+												"key": "EK-Channel-Name",
+												"value": "MOB"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": ""
+										},
+										"url": {
+											"raw": "https://mesh-gateway-ocsl-dev.apps.ocpdubdta.dubdta.emirates.dev/pricing/rebooking/v1/Reshop-Pricing-2c0b03df-1e6f-418d-bcf5-2c2b493519c",
+											"protocol": "https",
+											"host": [
+												"mesh-gateway-ocsl-dev",
+												"apps",
+												"ocpdubdta",
+												"dubdta",
+												"emirates",
+												"dev"
+											],
+											"path": [
+												"pricing",
+												"rebooking",
+												"v1",
+												"Reshop-Pricing-2c0b03df-1e6f-418d-bcf5-2c2b493519c"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Create - Reshop-Service",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{ocslAccessToken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/stream+json"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/stream+json"
+											},
+											{
+												"key": "EK-Correlation-Id",
+												"value": "1234567890111155"
+											},
+											{
+												"key": "EK-Request-Id",
+												"value": "req"
+											},
+											{
+												"key": "EK-Channel-Name",
+												"value": "MOB"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"reshopId\": \"Reshop-2648be6e-4759-4907-8342-2b255016a334\",\n  \"originDestinations\": [\n    {\n      \"id\": \"1\",\n      \"preferences\": [\n        {\n          \"type\": \"date\",\n          \"value\": \"2022-06-05\"\n        }\n      ]\n    },\n    {\n      \"id\": \"2\",\n      \"preferences\": [\n        {\n          \"type\": \"date\",\n          \"value\": \"2021-08-30\"\n        }\n      ]\n    }\n\n  ],\n  \"sortBy\" : \"price\"\n}"
+										},
+										"url": {
+											"raw": "https://mesh-gateway-ocsl-dev.apps.ocpdubdta.dubdta.emirates.dev/pricing/rebooking/v1",
+											"protocol": "https",
+											"host": [
+												"mesh-gateway-ocsl-dev",
+												"apps",
+												"ocpdubdta",
+												"dubdta",
+												"emirates",
+												"dev"
+											],
+											"path": [
+												"pricing",
+												"rebooking",
+												"v1"
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"_postman_isSubFolder": true
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			]
+		}
+	]
+}
